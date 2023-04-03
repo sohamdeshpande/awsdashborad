@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Install the required packages
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirement.txt
 
 
 # Expose port 9000 for the Flask app to listen on
