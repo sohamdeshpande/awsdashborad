@@ -1,0 +1,40 @@
+{%extends "layout.html" %}
+{%block content%}
+
+<h1>S3 Dashboard - Bucket Details</h1>
+<style>
+    table {
+      border: 1px solid black;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      text-align: center;
+      padding: 10px;
+    }
+    
+    th {
+      background-color: #061c94;
+      color: white;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+  
+  <table>
+    <tr>
+      <th>{{ rd['name'] }}</th>
+      <th>Bucket size in Mb {{ rd['bucket_size'] }}</th>
+    </tr>
+    {% for bucket, size in rd['bucket_cont'].items() %}
+    <tr>
+        <td>{{ bucket }}</td>
+        <td>{{ size }} bytes</td>
+    </tr>       
+    {% endfor %}
+</table>
+
+{% endblock %}
